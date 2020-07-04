@@ -30,4 +30,23 @@ class PertanyaanController extends Controller
         $pertanyaan = DB::table('pertanyaan')->where('id',$id)->get();
         return view('editPertanyaan', compact('pertanyaan'));
     }
+
+    public function update(Request $request) {
+        DB::table('pertanyaan')->where('id',$request->id)->update([
+            'judul' => $request->judul,
+            'isi' => $request->isi,
+        ]);
+        return redirect('/pertanyaan');
+    }
+
+    public function show($id) {
+        $pertanyaan = DB::table('pertanyaan')->where('id',$id)->get();
+        $jawaban = DB::table('jawaban')->where('pertanyaan_id',$id)->get();
+        return view('showPertanyaan', compact('pertanyaan'), compact('jawaban'));
+    }
+
+    public function destroy($id) {
+        DB::table('pertanyaan')->where('id',$id)->delete();
+        return redirect('/pertanyaan');
+    }
 }

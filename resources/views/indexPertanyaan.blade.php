@@ -18,7 +18,8 @@
                 <td> {{ $pertanyaan->judul }} </td>
                 <td> {{ $pertanyaan->isi }} </td>
                 <td><a href="/jawaban/{{ $pertanyaan->id }}">Jawaban</a></td>
-                <td><a href="/pertanyaan/{{ $pertanyaan->id }}">SHOW</a> | <a href="/pertanyaan/{{ $pertanyaan->id }}/edit">EDIT</a> | <a href="">HAPUS</a></td>
+                <td>
+                    <a href="/pertanyaan/{{ $pertanyaan->id }}">SHOW</a> | <a href="/pertanyaan/{{ $pertanyaan->id }}/edit">EDIT</a> | <a href="/pertanyaan/{{ $pertanyaan->id }}/hapus">HAPUS</a></td>
             </tr>
             @endforeach
         </tbody>

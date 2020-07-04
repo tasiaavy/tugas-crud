@@ -16,6 +16,7 @@
             <input type="text" class="form-control" id="isi" placeholder="Tulis Jawaban" name="isi">
         </div>
         <button type="submit" class="btn btn-primary">Jawab</button>
-        <a href="/pertanyaan"><button type="button" class="btn btn-info">Balik ke Pertanyaan</button></a>
+        <a href="/pertanyaan/{{ $jawaban->pertanyaan_id }}"><button type="button" class="btn btn-info">Balik ke Pertanyaan Ini</button></a>
+        <a href="/pertanyaan"><button type="button" class="btn btn-light">Balik ke List Pertanyaan</button></a>
     </form>
 @endsection

@@ -13,4 +13,9 @@ class PertanyaanModel {
         $new_pertanyaan = DB::table('pertanyaan')->insert($data);
         return $new_pertanyaan;
     }
+
+    public static function destroy($id) {
+        $deleted = DB::table('pertanyaan')->where('id',$id)->delete();
+        return $deleted;
+    }
 }
